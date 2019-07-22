@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { fakeBackendProvider } from './_helpers';
 
 import { appRoutingModule } from './app-routing.module';
 
@@ -17,9 +21,13 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     appRoutingModule
   ],
-  providers: [],
+  providers: [
+      fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
